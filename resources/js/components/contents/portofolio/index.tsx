@@ -1,0 +1,59 @@
+import SearchContent from "./Content/Search";
+import PortofolioCard from "./Content/Content";
+import { GlobalSection } from "@/components/partials/front/Global";
+import { LaravelPagination, LaravelResponse } from "@/types";
+import EmptyState from "@/components/EmptyState";
+import { Link } from "@inertiajs/react";
+import { twMerge } from "@/utils/tailwind";
+
+function PortofolioPagination({ page }: { page: LaravelPagination[] }) {
+  return (
+    <ul className="flex justify-center pt-16 gap-1">
+      {page &&
+        page.map((item, i) => (
+          <li key={i}>
+            <Link
+              href={item.url as string}
+              dangerouslySetInnerHTML={{
+                __html: item.label as string,
+              }}
+              className={
+                twMerge(
+                  "py-2 px-3 duration-200 transition-all rounded hover:bg-green-600 hover:text-white",
+                  item.active ? "bg-green-500 text-white" : "bg-white text-gray-500"
+                )
+              }
+            />
+          </li>
+        ))}
+    </ul>
+  );
+}
+
+function PortofolioSection({ data }: { data: Portofolio[] }) {
+  return (
+    <div className="grid grid-cols-12 gap-4 mt-4">
+      {data.length > 0 ? (
+        data.map((item, i) => (
+          <div className="col-span-12 md:col-span-4" key={i}>
+            <PortofolioCard data={item} />
+          </div>
+        ))
+      ) : (
+        <div className="col-span-12">
+          <EmptyState title="Data Tidak Dapat Ditemukan!" />
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function PortofolioContent({ data }: { data: LaravelResponse }) {
+  return (
+    <GlobalSection>
+      <SearchContent />
+      <PortofolioSection data={data?.data} />
+      <PortofolioPagination page={data?.links} />
+    </GlobalSection>
+  );
+}
