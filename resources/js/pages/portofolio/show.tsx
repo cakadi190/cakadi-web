@@ -1,7 +1,6 @@
 import PortofolioDetailContent from "@/components/contents/portofolio-show";
-import HomeLayout from "@/layouts/HomeLayout";
 import { HeaderPartial } from "@/components/contents/portofolio-show/Header";
-import { LaravelResponse } from "@/types";
+import HomeLayout from "@/layouts/HomeLayout";
 import { Head } from "@inertiajs/react";
 
 export default function ShowPortofolio({

@@ -4,14 +4,14 @@ import { T as TextInput } from "./TextInput-a083da08.js";
 import { usePage, router, Link, Head } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import { t as twMerge } from "./tailwind-3a0d7fb3.js";
-import { s as storage, H as HomeLayout } from "./HomeLayout-9a45364e.js";
-import { B as Badge, G as GlobalSection, E as EmptyState } from "./Global-fc183bad.js";
+import { B as Badge, s as storage, H as HomeLayout } from "./HomeLayout-cbdfc63e.js";
+import { G as GlobalSection, E as EmptyState } from "./Global-0dbf82d4.js";
 import "@headlessui/react";
+import "cva";
 import "react-icons/fa/index.esm.js";
 import "react-icons/ri/index.esm.js";
 import "./ApplicationLogo-91fe4a73.js";
 import "./NavLink-dc9632a1.js";
-import "cva";
 function SearchForm() {
   const [query, setQuery] = useState("");
   const { request } = usePage().props;
