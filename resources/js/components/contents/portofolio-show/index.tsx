@@ -11,7 +11,7 @@ const PortfolioDetailContent: React.FC<{ data: Portofolio }> = ({ data }) => {
     <div className="relative bg-white">
       <div className="container pt-4 pb-16">
         <div className="flex gap-4">
-          <div className="md:w-1/4">
+          <div className="md:w-3/4">
             <ImageComponent image={image} name={name} />
             <BadgesComponent category={category as PortofolioCategories[]} />
 

@@ -7,7 +7,7 @@ export default function PortofolioContent({ data }: { data: Portofolio }) {
         <h3 className="font-semibold font-heading text-lg truncate">{data.name}</h3>
         <Badge variant="primary" className="self-center flex-shrink-0" size="sm" children={data.category && data.category[0]?.name} />
       </div>
-      <p className="text-gray-500 mb-0">{data.description}</p>
+      <p className="text-gray-500 mb-0">{data.highlight}</p>
     </div>
   )
 }
