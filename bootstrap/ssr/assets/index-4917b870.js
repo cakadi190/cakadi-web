@@ -1,4 +1,5 @@
 import { jsx } from "react/jsx-runtime";
+import React from "react";
 import { cva } from "cva";
 const buttonSize = {
   sm: ["px-3 py-2 text-sm", "rounded-md", "gap-1"],
@@ -96,31 +97,39 @@ const buttonTint = {
     "hover:bg-red-100 focus:ring-2 focus:ring-red-500/[.75] focus:ring-offset-2"
   ]
 };
-const button = cva("outline-0 outline-none duration-200 transition-all flex items-center", {
-  variants: {
-    variant: {
-      ...buttonSolid,
-      ...buttonOutline,
-      ...buttonGhost,
-      ...buttonTint,
-      ...buttonLink
+const button = cva(
+  "outline-0 outline-none duration-200 transition-all flex items-center",
+  {
+    variants: {
+      variant: {
+        ...buttonSolid,
+        ...buttonOutline,
+        ...buttonGhost,
+        ...buttonTint,
+        ...buttonLink
+      },
+      size: {
+        ...buttonSize
+      }
     },
-    size: {
-      ...buttonSize
+    compoundVariants: [{ variant: "primary", size: "md" }],
+    defaultVariants: {
+      variant: "primary",
+      size: "md"
     }
-  },
-  compoundVariants: [{ variant: "primary", size: "md" }],
-  defaultVariants: {
-    variant: "primary",
-    size: "md"
   }
-});
-const Button = ({
-  className,
-  variant,
-  size,
-  ...props
-}) => /* @__PURE__ */ jsx("button", { className: button({ className, variant, size }), ...props });
+);
+const Button = React.forwardRef(
+  ({ className, variant, size, style, ...props }, ref) => /* @__PURE__ */ jsx(
+    "button",
+    {
+      style,
+      ref,
+      className: button({ className, variant, size }),
+      ...props
+    }
+  )
+);
 export {
   Button as B
 };

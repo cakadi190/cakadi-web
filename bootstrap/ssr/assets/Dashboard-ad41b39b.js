@@ -1,11 +1,12 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthenticatedLayout-e732cde2.js";
+import { A as Authenticated } from "./AuthenticatedLayout-b645bfd2.js";
 import { Head } from "@inertiajs/react";
 import "react";
 import "./ApplicationLogo-91fe4a73.js";
+import "./Dropdown-18a9895b.js";
 import "@headlessui/react";
-import "./NavLink-dc9632a1.js";
 import "./tailwind-3a0d7fb3.js";
+import "./NavLink-dc9632a1.js";
 function Dashboard({ auth }) {
   return /* @__PURE__ */ jsxs(
     Authenticated,

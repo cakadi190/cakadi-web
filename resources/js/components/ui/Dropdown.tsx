@@ -9,6 +9,7 @@ import {
 } from "react";
 import { Link, InertiaLinkProps } from "@inertiajs/react";
 import { Transition } from "@headlessui/react";
+import { twMerge } from "@/utils/tailwind";
 
 const DropDownContext = createContext<{
   open: boolean;
@@ -95,7 +96,7 @@ const Content = ({
         >
           <div
             className={
-              `rounded-md ring-1 ring-black ring-opacity-5 ` + contentClasses
+              twMerge(contentClasses, "py-1 bg-white rounded-md ring-1 ring-black ring-opacity-5 ")
             }
           >
             {children}

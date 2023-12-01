@@ -1,8 +1,9 @@
 import { jsxs, jsx } from "react/jsx-runtime";
 import { a as ApplicationLogoAlt } from "./ApplicationLogo-91fe4a73.js";
-import { B as Button } from "./index-7b385a55.js";
+import { B as Button } from "./index-4917b870.js";
 import { Link } from "@inertiajs/react";
 import { FaHome } from "react-icons/fa/index.esm.js";
+import "react";
 import "cva";
 function ErrorPage({ status }) {
   const title = {

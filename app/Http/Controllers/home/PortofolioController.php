@@ -4,6 +4,7 @@ namespace App\Http\Controllers\home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PortofolioController extends Controller
 {
@@ -46,6 +47,11 @@ class PortofolioController extends Controller
             abort(404);
         }
 
-        return inertia('portofolio/show', compact('portofolio'));
+        return inertia('portofolio/show', compact('portofolio'))->withViewData([
+            'title' => $portofolio->name,
+            'pageDescription' => $portofolio->description,
+            'imageSeo' => asset("storage/uploads/{$portofolio->image}"),
+            'imageSeoDesc' => $portofolio->name,
+        ]);
     }
 }

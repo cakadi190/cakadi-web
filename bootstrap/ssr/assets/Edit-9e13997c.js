@@ -1,19 +1,23 @@
 import { jsxs, jsx } from "react/jsx-runtime";
-import { A as Authenticated } from "./AuthenticatedLayout-e732cde2.js";
-import DeleteUserForm from "./DeleteUserForm-15e13415.js";
-import UpdatePasswordForm from "./UpdatePasswordForm-32d88cb3.js";
-import UpdateProfileInformation from "./UpdateProfileInformationForm-c9f6d583.js";
+import { A as Authenticated } from "./AuthenticatedLayout-b645bfd2.js";
+import UpdatePasswordForm from "./UpdatePasswordForm-f2bbaefd.js";
+import UpdateProfileInformation from "./UpdateProfileInformationForm-c0d77959.js";
 import { Head } from "@inertiajs/react";
 import "react";
 import "./ApplicationLogo-91fe4a73.js";
+import "./Dropdown-18a9895b.js";
 import "@headlessui/react";
-import "./NavLink-dc9632a1.js";
 import "./tailwind-3a0d7fb3.js";
+import "./NavLink-dc9632a1.js";
 import "./InputError-4ef2eb93.js";
 import "./InputLabel-747c5b8a.js";
-import "./TextInput-36edeb8b.js";
 import "./PrimaryButton-eeb7392f.js";
-function Edit({ auth, mustVerifyEmail, status }) {
+import "./TextInput-a083da08.js";
+function Edit({
+  auth,
+  mustVerifyEmail,
+  status
+}) {
   return /* @__PURE__ */ jsxs(
     Authenticated,
     {
@@ -30,8 +34,7 @@ function Edit({ auth, mustVerifyEmail, status }) {
               className: "max-w-xl"
             }
           ) }),
-          /* @__PURE__ */ jsx("div", { className: "p-4 sm:p-8 bg-white shadow sm:rounded-lg", children: /* @__PURE__ */ jsx(UpdatePasswordForm, { className: "max-w-xl" }) }),
-          /* @__PURE__ */ jsx("div", { className: "p-4 sm:p-8 bg-white shadow sm:rounded-lg", children: /* @__PURE__ */ jsx(DeleteUserForm, { className: "max-w-xl" }) })
+          /* @__PURE__ */ jsx("div", { className: "p-4 sm:p-8 bg-white shadow sm:rounded-lg", children: /* @__PURE__ */ jsx(UpdatePasswordForm, { className: "max-w-xl" }) })
         ] }) })
       ]
     }

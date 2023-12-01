@@ -37,4 +37,12 @@ class HomeController extends Controller
         Mail::to($user->email ?? 'cakadi190@gmail.com')->send(new \App\Mail\TestEmail());
         return "Test email sent!";
     }
+
+    public function sitemap()
+    {
+        $portofolios = Portofolio::latest()
+            ->take(6)->get();
+
+        return response()->view('sitemap', compact('portofolios'))->header('Content-Type', 'text/xml');
+    }
 }

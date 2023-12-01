@@ -31,7 +31,7 @@ const TextInput = forwardRef(function TextInput2({
       type,
       className: twMerge(
         className,
-        "px-3 py-2 text-base border border-gray-300 rounded-md outline-none focus:border-green-500 focus:ring-0",
+        "px-3 py-2 text-base border border-gray-300 rounded-lg outline-none focus:border-green-500 focus:ring-0",
         (disabled || readOnly) && "bg-gray-100 text-gray-500 cursor-default",
         disabled && "cursor-not-allowed"
       ),

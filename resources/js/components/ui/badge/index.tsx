@@ -1,5 +1,5 @@
 import badgeSize from "./size";
-import React from "react";
+import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "cva";
 import {
   badgeSolid,
@@ -36,17 +36,16 @@ export interface BadgeProps
   extends React.HTMLAttributes<HTMLSpanElement | HTMLElement>,
     VariantProps<typeof badge> {
   tag?: string | keyof JSX.IntrinsicElements;
+  style?: React.CSSProperties;
 }
 
-export const Badge: React.FC<BadgeProps> = ({
-  className,
-  variant,
-  size,
-  tag,
-  ...props
-}) => {
-  return React.createElement(tag ?? "span", {
-    className: badge({ className, variant, size }),
-    ...props,
-  });
-};
+export const Badge = forwardRef<HTMLElement, BadgeProps>(
+  ({ className, variant, size, tag, style, ...props }, ref) => {
+    return React.createElement(tag ?? 'span', {
+      ...props,
+      ref,
+      className: badge({ className, variant, size }),
+      style: style,
+    });
+  }
+);

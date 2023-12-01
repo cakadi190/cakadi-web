@@ -4,7 +4,7 @@ import { G as Guest } from "./GuestLayout-55cf3e36.js";
 import { I as InputError } from "./InputError-4ef2eb93.js";
 import { I as InputLabel } from "./InputLabel-747c5b8a.js";
 import { P as PrimaryButton } from "./PrimaryButton-eeb7392f.js";
-import { T as TextInput } from "./TextInput-36edeb8b.js";
+import { T as TextInput } from "./TextInput-a083da08.js";
 import { useForm, Head } from "@inertiajs/react";
 import "./ApplicationLogo-91fe4a73.js";
 import "./tailwind-3a0d7fb3.js";

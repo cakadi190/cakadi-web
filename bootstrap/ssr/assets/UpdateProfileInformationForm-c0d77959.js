@@ -2,7 +2,7 @@ import { jsxs, jsx } from "react/jsx-runtime";
 import { I as InputError } from "./InputError-4ef2eb93.js";
 import { I as InputLabel } from "./InputLabel-747c5b8a.js";
 import { P as PrimaryButton } from "./PrimaryButton-eeb7392f.js";
-import { T as TextInput } from "./TextInput-36edeb8b.js";
+import { T as TextInput } from "./TextInput-a083da08.js";
 import { usePage, useForm, Link } from "@inertiajs/react";
 import { Transition } from "@headlessui/react";
 import "./tailwind-3a0d7fb3.js";

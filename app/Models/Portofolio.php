@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Laravel\Scout\Searchable;
 use Staudenmeir\EloquentJsonRelations\HasJsonRelationships;
 
 class Portofolio extends Model
 {
-    use HasFactory, HasJsonRelationships, Searchable;
+    use HasFactory, HasJsonRelationships;
 
     /**
      * Boot the Portofolio model.
@@ -66,6 +65,8 @@ class Portofolio extends Model
      * @var array
      */
     protected $casts = [
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+        'created_at' => 'datetime:Y-m-d H:i:s',
         'published_at' => 'datetime:Y-m-d H:i:s',
         'id' => 'string',
         'category' => 'json',

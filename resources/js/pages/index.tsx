@@ -25,7 +25,7 @@ export default function Welcome({
       </GlobalSection>
 
       <GlobalSectionWithTitle
-        moreButton={{ link: "/portofolio", title: "Selengkapnya" }}
+        moreButton={{ link: "/portofolio", title: "Selengkapnya", internal: true }}
         title="Portofolio Saya"
       >
         <PortofolioSection data={portofolio} />

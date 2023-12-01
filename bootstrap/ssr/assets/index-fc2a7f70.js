@@ -1,10 +1,11 @@
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
-import { a as asset, B as Badge, s as storage, E as EmptyState, H as HomeLayout, G as GlobalSection, b as GlobalSectionWithTitle } from "./HomeLayout-a6e59143.js";
+import { B as Badge, E as EmptyState, G as GlobalSection, a as GlobalSectionWithTitle } from "./Global-fc183bad.js";
 import { t as twMerge } from "./tailwind-3a0d7fb3.js";
 import { RiFilePdf2Fill, RiTimeFill, RiEye2Fill, RiCodeLine } from "react-icons/ri/index.esm.js";
-import { B as Button } from "./index-7b385a55.js";
+import { B as Button } from "./index-4917b870.js";
 import { Link, Head } from "@inertiajs/react";
 import { FaArrowRight } from "react-icons/fa/index.esm.js";
+import { a as asset, s as storage, H as HomeLayout } from "./HomeLayout-9a45364e.js";
 import { KotlinOriginal, LaravelOriginal, TypescriptOriginal, JavascriptOriginal, FigmaOriginal, NextjsOriginal, NodejsOriginal, FlutterOriginal, WordpressPlain, NuxtjsPlain, VuejsOriginal, BootstrapPlain, VscodeOriginal } from "@beta/devicons-react";
 import { Tooltip } from "react-tooltip";
 import "react";
@@ -428,7 +429,7 @@ function Welcome({
     /* @__PURE__ */ jsx(
       GlobalSectionWithTitle,
       {
-        moreButton: { link: "/portofolio", title: "Selengkapnya" },
+        moreButton: { link: "/portofolio", title: "Selengkapnya", internal: true },
         title: "Portofolio Saya",
         children: /* @__PURE__ */ jsx(PortofolioSection, { data: portofolio })
       }

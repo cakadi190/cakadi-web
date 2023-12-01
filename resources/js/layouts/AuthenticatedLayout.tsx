@@ -13,6 +13,14 @@ export default function Authenticated({
   const [showingNavigationDropdown, setShowingNavigationDropdown] =
     useState(false);
 
+  const linkItems = [
+    { name: "Dashboard", href: 'dashboard',  },
+    { name: "Portofolio", href: 'dashboard.portofolio.index' },
+    { name: "Penghargaan", href: "dashboard.achievement.index" },
+    { name: "Karir", href: "dashboard.career.index" },
+    { name: "Pendidikan", href: "dashboard.education.index" },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white border-b border-gray-100">
@@ -25,13 +33,26 @@ export default function Authenticated({
                 </Link>
               </div>
 
-              <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                <NavLink
-                  href={route("dashboard")}
-                  active={route().current("dashboard")}
-                >
-                  Dashboard
-                </NavLink>
+              <div className="hidden sm:-my-px sm:ms-10 sm:flex">
+                {linkItems.map((item) => (
+                  route().has(item.href) ? (
+                    <NavLink
+                      href={route(item.href)}
+                      active={route().current(item.href)}
+                      className="!rounded-none px-4"
+                    >
+                      {item.name}
+                    </NavLink>
+                  ) : (
+                    <NavLink
+                      href={route("dashboard")}
+                      active={route().current("dashboard")}
+                      className="!rounded-none px-4"
+                    >
+                      {item.name}
+                    </NavLink>
+                  )
+                ))}
               </div>
             </div>
 
@@ -142,7 +163,10 @@ export default function Authenticated({
             </div>
 
             <div className="mt-3 space-y-1">
-              <ResponsiveNavLink href={route("profile.edit")}>
+              <ResponsiveNavLink
+                active={route().current("dashboard")}
+                href={route("profile.edit")}
+              >
                 Profile
               </ResponsiveNavLink>
               <ResponsiveNavLink
