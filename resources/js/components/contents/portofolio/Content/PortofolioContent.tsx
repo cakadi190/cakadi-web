@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { getTextFromBg } from "@/utils/tailwind";
 
 export default function PortofolioContent({ data }: { data: Portofolio }) {
   const { name, category, highlight } = data;
@@ -10,7 +11,10 @@ export default function PortofolioContent({ data }: { data: Portofolio }) {
         {category && (
           <Badge
             variant="primary"
-            style={{ background: `${category[0].background}!important` }}
+            style={{
+              background: category[0].background as string,
+              color: getTextFromBg(category[0].background as string),
+            }}
             className="self-center flex-shrink-0"
             size="sm"
             tag="div"

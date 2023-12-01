@@ -1,0 +1,1 @@
+const g=(...t)=>t.join(" ");function a(t){let e=t.substring(1,3),n=t.substring(3,5),s=t.substring(5,7);return 255-(parseInt(e,16)*.2+parseInt(n,16)*.5+parseInt(s,16)*.114)<105?"#000":"#fff"}export{a as g,g as t};

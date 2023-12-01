@@ -1,5 +1,46 @@
 import { Badge } from "@/components/ui/badge";
 import { asset, storage } from "@/utils/folder";
+import { getTextFromBg } from "@/utils/tailwind";
+import React, { useState } from "react";
+import PhotoAlbum from "react-photo-album";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
+const GalleryComponent: React.FC<{ gallery?: Gallery[] }> = ({ gallery }) => {
+  const [index, setIndex] = React.useState(-1);
+  let galleries: any[] = [];
+
+  if (gallery && gallery?.length > 0) {
+    galleries = gallery.map((item) => {
+      return {
+        id: item.id,
+        src: storage(`uploads/${item.image}`) ?? asset("images/portofolio.png"),
+        width: item.width,
+        height: item.height,
+      };
+    });
+  }
+
+  return (
+    <div className="mt-4">
+      <h3 className="font-bold mb-3 font-heading text-2xl">Galeri</h3>
+
+      <PhotoAlbum
+        layout="masonry"
+        photos={galleries}
+        targetRowHeight={150}
+        onClick={({ index: current }) => setIndex(current)}
+      />
+
+      <Lightbox
+        index={index}
+        slides={galleries}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+      />
+    </div>
+  );
+};
 
 const ProjectDetailsComponent: React.FC<{
   name: string;
@@ -63,8 +104,12 @@ const BadgesComponent: React.FC<{
       {category.map((item, index) => (
         <Badge
           key={index}
-          className={`bg-[${item.background}] inline-flex`}
+          className={`inline-flex`}
           size={"sm"}
+          style={{
+            background: item.background as string,
+            color: getTextFromBg(item.background as string),
+          }}
         >
           {item.name}
         </Badge>
@@ -73,4 +118,9 @@ const BadgesComponent: React.FC<{
   );
 };
 
-export { ProjectDetailsComponent, ImageComponent, BadgesComponent };
+export {
+  ProjectDetailsComponent,
+  ImageComponent,
+  BadgesComponent,
+  GalleryComponent,
+};

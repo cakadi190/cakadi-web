@@ -7,4 +7,6 @@ interface Gallery {
   image: string | null;
   link: string | null;
   portofolioId: string;
+  width: number;
+  height: number;
 }

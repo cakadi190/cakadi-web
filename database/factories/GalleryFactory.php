@@ -25,6 +25,8 @@ class GalleryFactory extends Factory
             'image' => $this->faker->image('public/storage/uploads', 1920, 1080, "Animals", false),
             'link' => $this->faker->url(),
             'portofolio_id' => (new Portofolio())->inRandomOrder()->first()->id,
+            'height' => 1080,
+            'width' => 1920,
         ];
     }
 }

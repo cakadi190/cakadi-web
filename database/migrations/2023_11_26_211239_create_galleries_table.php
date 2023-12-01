@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('link')->nullable();
             $table->string('portofolio_id');
+            $table->unsignedBigInteger('height')->nullable()->default(0);
+            $table->unsignedBigInteger('width')->nullable()->default(0);
         });
     }
 
