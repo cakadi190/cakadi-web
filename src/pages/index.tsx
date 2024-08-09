@@ -5,7 +5,7 @@ import LayoutDefault from "../layouts/default";
 export default function Home() {
   return (
     <LayoutDefault>
-      <SEO title="Beranda" description="Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi." />
+      <SEO title="Beranda" description="Seorang Fullstack Web Developer yang berbasis di Kabupaten Ngawi yang suka sekali dengan desain dan juga hal yang berbau teknologi" />
     </LayoutDefault>
   );
 }

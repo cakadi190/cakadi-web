@@ -32,8 +32,8 @@ const ErrorPage: FC<ErrorProps> = ({ statusCode }) => {
         }
         description={
           statusCode === 404
-            ? t("Halaman yang kamu akses saat ini tidak dapat ditemukan.")
-            : t("Ada masalah yang telah terjadi, dicoba lagi nanti.")
+            ? t("Halaman yang kamu akses saat ini tidak dapat ditemukan")
+            : t("Ada masalah yang telah terjadi, dicoba lagi nanti")
         }
       />
 
@@ -48,8 +48,8 @@ const ErrorPage: FC<ErrorProps> = ({ statusCode }) => {
             </h2>
             <p className="lead fw-normal opacity-50">
               {statusCode === 404
-                ? t("Halaman yang kamu akses saat ini tidak dapat ditemukan.")
-                : t("Ada masalah yang telah terjadi, dicoba lagi nanti.")}
+                ? t("Halaman yang kamu akses saat ini tidak dapat ditemukan")
+                : t("Ada masalah yang telah terjadi, dicoba lagi nanti")}
             </p>
 
             <Link className="btn btn-primary" href="/">

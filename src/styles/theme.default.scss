@@ -60,15 +60,22 @@ $radius-sizes: (
     border-right: 1px solid var(--#{$prefix}sidebar-border);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
 
     @media screen and (max-width: 992px) {
       transform: translateX(-100%);
 
-      &.toggled {
+      &.open {
         transform: translateX(0);
+
+        ~.sidebar-toggler {
+          margin-left: calc(var(--#{$prefix}sidebar-width) - 2rem);
+        }
       }
     }
 
+    // After Logo
     .main-title {
       font-size: 1.5rem;
     }
@@ -96,7 +103,7 @@ $radius-sizes: (
         justify-content: center;
         outline: none;
         opacity: 0.5;
-        
+
         &.current {
           opacity: 1;
           border-color: var(--#{$prefix}sidebar-border);
@@ -107,11 +114,12 @@ $radius-sizes: (
 
     .nav-menu {
       margin-top: 1rem;
+      margin-bottom: 1rem;
       padding: .5rem;
       border-radius: var(--#{$prefix}rounded);
       background-color: var(--#{$prefix}body-bg);
       border: 1px solid var(--#{$prefix}sidebar-border);
-      
+
       .nav {
         list-style: none;
         display: flex;
@@ -140,8 +148,56 @@ $radius-sizes: (
     footer {
       margin-top: auto;
 
-      > * {
+      >* {
         margin-bottom: 0;
+      }
+    }
+  }
+
+  .sidebar-toggler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    padding: .75rem;
+    background-color: var(--#{$prefix}sidebar-bg);
+    border-radius: var(--#{$prefix}rounded);
+    border: 1px solid var(--#{$prefix}sidebar-border);
+    display: none;
+    transition: all .2s;
+
+    @media screen and (max-width: 992px) {
+      display: flex;
+      margin: 1rem;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+
+      &:nth-child(1) {
+        transform-origin: top left;
+      }
+
+      &:nth-child(2) {
+        transform-origin: center;
+      }
+
+      &:nth-child(3) {
+        transform-origin: bottom left;
       }
     }
   }

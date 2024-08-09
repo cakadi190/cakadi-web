@@ -1,20 +1,20 @@
 {
   "Beranda": "Omah",
-  "Portfolio": "Portofolio",
-  "Tentang Saya": "Babagan",
-  "Hubungi Saya": "Kontak Saya",
+  "Portfolio": "Portfolio",
+  "Tentang Saya": "Babagan Kula",
+  "Hubungi Saya": "Hubungi Saya",
   "Pendidikan": "Pendhidikan",
   "Karir": "Karir",
-
-  "Halaman Tidak Ditemukan": "Halaman'e Gaonok",
-  "Peladen Bermasalah": "Peladen'e Njeblug",
-
+  "Kembali Ke Beranda": "Mbalik Nang Omah",
+  "Halaman Tidak Ditemukan": "Halaman Ora Ketemu",
+  "Peladen Bermasalah": "Peladen Lagi Bermasalah",
+  "Halaman yang kamu akses saat ini tidak dapat ditemukan": "Halaman sing diakses saiki ora ketemu",
+  "Ada masalah yang telah terjadi, dicoba lagi nanti": "Ono masalah sing kedaden, cobanen maneh ngko",
   "Ganti Bahasa": "Genti Boso",
-
   "Selamat Datang": "Sugeng Rawuh",
-
-  "Gelap": "Peteng", 
+  "Gelap": "Peteng",
   "Terang": "Padhang",
-
-  "Diperbaharui pada {date}": "Dianyari ing {date}"
+  "Diperbaharui pada {date}": "Dianyari ing {date}",
+  "Hak Cipta": "Hak Cipta",
+  "Catatan Saya": "Cathetanku"
 }

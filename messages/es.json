@@ -1,18 +1,20 @@
 {
   "Beranda": "Pagina de inicio",
-  "Portfolio": "Portafolio",
+  "Portfolio": "Cartera",
   "Tentang Saya": "Acerca de mí",
   "Hubungi Saya": "Contáctame",
   "Pendidikan": "Educación",
   "Karir": "Carrera",
-  "Kembali Ke Beranda": "Regresar a la página principal",
+  "Kembali Ke Beranda": "Volver a la página de inicio",
   "Halaman Tidak Ditemukan": "Página no encontrada",
   "Peladen Bermasalah": "Problema del servidor",
-  "Halaman yang kamu akses saat ini tidak dapat ditemukan.": "No se puede encontrar la página a la que está accediendo actualmente.",
-  "Ada masalah yang telah terjadi, dicoba lagi nanti.": "Se ha producido un problema, inténtelo de nuevo más tarde.",
+  "Halaman yang kamu akses saat ini tidak dapat ditemukan": "No se puede encontrar la página a la que está accediendo actualmente",
+  "Ada masalah yang telah terjadi, dicoba lagi nanti": "Se ha producido un problema, inténtelo de nuevo más tarde",
   "Ganti Bahasa": "Cambiar idioma",
   "Selamat Datang": "Bienvenido",
   "Gelap": "Oscuro",
   "Terang": "Brillante",
-  "Diperbaharui pada {date}": "Actualizado el {fecha}"
+  "Diperbaharui pada {date}": "Actualizado el {fecha}",
+  "Hak Cipta": "Derechos de autor",
+  "Catatan Saya": "Mis notas"
 }

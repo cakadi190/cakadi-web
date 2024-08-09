@@ -1,12 +1,12 @@
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
-
-import "../scss/core.scss";
-import "../styles/theme.default.scss";
-import MultiContextProvider from "@/context/MultiContextLoader";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { useRouter } from "next/router";
 import { NextIntlClientProvider } from "next-intl";
+import MultiContextProvider from "@/context/MultiContextLoader";
+
+import "../scss/core.scss";
+import "../styles/theme.default.scss";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
