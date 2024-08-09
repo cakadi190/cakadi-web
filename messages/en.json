@@ -1,0 +1,22 @@
+{
+  "Beranda": "Home",
+  "Portfolio": "Portfolio",
+  "Tentang Saya": "About Me",
+  "Hubungi Saya": "Contact Me",
+  "Pendidikan": "Education",
+  "Karir": "Career",
+
+  "Halaman Tidak Ditemukan": "Page Not Found",
+  "Peladen Bermasalah": "Internal Server Error",
+  "Halaman yang kamu akses saat ini tidak dapat ditemukan.": "Current page you're accessed is not exists.",
+  "Ada masalah yang telah terjadi, dicoba lagi nanti.": "Something wrong on server, please try again later",
+
+  "Ganti Bahasa": "Change Language",
+
+  "Selamat Datang": "Welcome",
+  
+  "Gelap": "Dark",
+  "Terang": "Light",
+
+  "Diperbaharui pada {date}": "Updated at {date}"
+}

@@ -1,0 +1,161 @@
+$prefix: porto-;
+
+$main-bg: #041009;
+$main-radius: 1rem;
+
+$background-sidebar-dark: mix($main-bg, #fff, 95%);
+$background-sidebar-light: #fff;
+$background-body-dark: $main-bg;
+$background-body-light: mix($main-bg, #fff, 2%);
+
+$border-sidebar-dark: mix($main-bg, #fff, 92%);
+$border-sidebar-light: mix($main-bg, #fff, 10%);
+$border-sidebar-content-dark: mix($main-bg, #fff, 92%);
+$border-sidebar-content-light: mix($main-bg, #fff, 25%);
+
+$radius-sizes: (
+  xs: $main-radius * .125,
+  sm: $main-radius * .25,
+  md: $main-radius * .5,
+  lg: $main-radius * 1,
+  xl: $main-radius * 2,
+  xxl: $main-radius * 4
+);
+
+:root {
+  --#{$prefix}rounded: .5rem;
+
+  @each $size, $value in $radius-sizes {
+    --#{$prefix}rounded-#{$size}: #{$value};
+  }
+
+  --#{$prefix}sidebar-width: 18rem;
+  --#{$prefix}sidebar-zindex: 1090;
+
+  --#{$prefix}sidebar-padding-x: 1rem;
+  --#{$prefix}sidebar-padding-y: 1rem;
+  --#{$prefix}sidebar-bg: #{$background-sidebar-light};
+  --#{$prefix}sidebar-border: #{$border-sidebar-light};
+  --#{$prefix}sidebar-content-border: #{$border-sidebar-content-light};
+
+  --#{$prefix}body-bg: #{$background-body-light};
+
+  [data-bs-theme=dark] {
+    --#{$prefix}sidebar-content-border: #{$border-sidebar-content-dark};
+    --#{$prefix}sidebar-bg: #{$background-sidebar-dark};
+    --#{$prefix}sidebar-border: #{$border-sidebar-dark};
+    --#{$prefix}body-bg: #{$background-body-dark};
+  }
+}
+
+.main-layout {
+  aside#sidebar {
+    position: fixed;
+    height: 100vh;
+    z-index: var(--#{$prefix}sidebar-zindex);
+    width: var(--#{$prefix}sidebar-width);
+    background-color: var(--#{$prefix}sidebar-bg);
+    padding: var(--#{$prefix}sidebar-padding-y) var(--#{$prefix}sidebar-padding-x);
+    transition: all .2s;
+    border-right: 1px solid var(--#{$prefix}sidebar-border);
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 992px) {
+      transform: translateX(-100%);
+
+      &.toggled {
+        transform: translateX(0);
+      }
+    }
+
+    .main-title {
+      font-size: 1.5rem;
+    }
+
+    .darkmode-toggler {
+      margin-bottom: 1rem;
+      width: 100%;
+      border-radius: var(--#{$prefix}rounded);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .25rem;
+      border: 1px solid var(--#{$prefix}sidebar-border);
+      background: var(--#{$prefix}body-bg);
+
+      button {
+        border: 1px solid transparent;
+        width: 100%;
+        padding: .5rem;
+        background: transparent;
+        border-radius: var(--#{$prefix}rounded-sm);
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        justify-content: center;
+        outline: none;
+        opacity: 0.5;
+        
+        &.current {
+          opacity: 1;
+          border-color: var(--#{$prefix}sidebar-border);
+          background: var(--#{$prefix}sidebar-bg);
+        }
+      }
+    }
+
+    .nav-menu {
+      margin-top: 1rem;
+      padding: .5rem;
+      border-radius: var(--#{$prefix}rounded);
+      background-color: var(--#{$prefix}body-bg);
+      border: 1px solid var(--#{$prefix}sidebar-border);
+      
+      .nav {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        .nav-item {
+          .nav-link {
+            border-radius: var(--#{$prefix}rounded);
+            padding: .75rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            text-decoration: none;
+            color: inherit;
+
+            &.active,
+            &:active,
+            &:hover {
+              color: var(--bs-primary);
+            }
+          }
+        }
+      }
+    }
+
+    footer {
+      margin-top: auto;
+
+      > * {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #main-wrapper {
+    margin-left: var(--#{$prefix}sidebar-width);
+    background-color: var(--#{$prefix}body-bg);
+    min-height: 100vh;
+    width: calc(100% - var(--#{$prefix}sidebar-width));
+    transition: all .2s;
+
+    @media screen and (max-width: 992px) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
