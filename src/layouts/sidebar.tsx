@@ -99,7 +99,7 @@ export function Sidebar() {
   
   return (
     <>
-      <aside id="sidebar" ref={sidebarRef}>
+      <aside className={sans.className} id="sidebar" ref={sidebarRef}>
         <Logo />
         <Greeting />
         <DarkMode />

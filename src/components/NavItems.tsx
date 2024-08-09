@@ -1,3 +1,4 @@
+import { sans } from '@/utils/fonts';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
@@ -10,7 +11,7 @@ interface NavigationItemProps {
 
 function NavigationItem({ name, href, isActive, translate }: NavigationItemProps) {
   return (
-    <li className={twMerge("nav-item", isActive ? 'active' : '')}>
+    <li className={twMerge("nav-item", sans.className, isActive ? 'active' : '')}>
       <Link href={href} className={twMerge("nav-link", isActive ? 'active' : '')}>
         {translate(name)}
       </Link>
