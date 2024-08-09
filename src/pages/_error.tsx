@@ -1,6 +1,6 @@
 // pages/_error.tsx
+import { GetServerSideProps } from "next";
 import { Button } from "react-bootstrap";
-import { NextPageContext } from "next";
 import { FC, useEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { useLocale, useTranslations } from "next-intl";
@@ -19,7 +19,7 @@ const ErrorPage: FC<ErrorProps> = ({ statusCode }) => {
 
   useEffect(() => {
     document.body.setAttribute("data-bs-theme", theme);
-    jQuery('html').attr('lang', locale);
+    jQuery("html").attr("lang", locale);
   }, [theme, locale]);
 
   return (
@@ -51,9 +51,10 @@ const ErrorPage: FC<ErrorProps> = ({ statusCode }) => {
                 ? t("Halaman yang kamu akses saat ini tidak dapat ditemukan.")
                 : t("Ada masalah yang telah terjadi, dicoba lagi nanti.")}
             </p>
-            <Button as={Link} href="/">
+
+            <Link className="btn btn-primary" href="/">
               {t("Kembali Ke Beranda")}
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -61,9 +62,11 @@ const ErrorPage: FC<ErrorProps> = ({ statusCode }) => {
   );
 };
 
-ErrorPage.getInitialProps = async (ctx: NextPageContext) => {
-  const statusCode = ctx.res?.statusCode || ctx.err?.statusCode || 500;
-  return { statusCode };
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const statusCode = ctx.res?.statusCode || 500;
+  return {
+    props: { statusCode },
+  };
 };
 
 export default ErrorPage;
